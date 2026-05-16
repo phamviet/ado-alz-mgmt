@@ -6,9 +6,9 @@
   "INTERMEDIATE_ROOT_MANAGEMENT_GROUP_ID": "alz",
   "SUBSCRIPTION_ID_MANAGEMENT": "733d1a5f-ea85-4d0e-ae85-c9e93cb6ec82",
   "NETWORK_TYPE": "hubNetworking",
-  "LOCATION": "<region-1>",
-  "LOCATION_PRIMARY": "<region-1>",
+  "LOCATION": "southeastasia",
+  "LOCATION_PRIMARY": "southeastasia",
   "MANAGEMENT_GROUP_ID": "",
-  "LOCATION_SECONDARY": "<region-2>",
+  "LOCATION_SECONDARY": "",
   "SUBSCRIPTION_ID_SECURITY": ""
 }
