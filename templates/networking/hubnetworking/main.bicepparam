@@ -3,7 +3,6 @@ using './main.bicep'
 // General Parameters
 param parLocations = [
   'southeastasia'
-  ''
 ]
 param parGlobalResourceLock = {
   name: 'GlobalResourceLock'
@@ -26,7 +25,7 @@ param hubNetworks = [
     addressPrefixes: [
       '10.0.0.0/22'
     ]
-    deployPeering: true
+    deployPeering: false
     dnsServers: []
     peeringSettings: [
       {
@@ -66,7 +65,7 @@ param hubNetworks = [
       }
     ]
     azureFirewallSettings: {
-      deployAzureFirewall: true
+      deployAzureFirewall: false
       azureFirewallName: 'afw-alz-${parLocations[0]}'
       azureSkuTier: 'Standard'
       publicIPAddressObject: {
@@ -77,12 +76,12 @@ param hubNetworks = [
       }
     }
     bastionHostSettings: {
-      deployBastion: true
+      deployBastion: false
       bastionHostSettingsName: 'bas-alz-${parLocations[0]}'
       skuName: 'Standard'
     }
     vpnGatewaySettings: {
-      deployVpnGateway: true
+      deployVpnGateway: false
       name: 'vgw-alz-${parLocations[0]}'
       skuName: 'VpnGw1AZ'
       vpnMode: 'activeActiveBgp'
