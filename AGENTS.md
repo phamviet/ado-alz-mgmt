@@ -7,12 +7,36 @@ Azure Landing Zone infrastructure-as-code using **Bicep**. Deploys management gr
 ## Critical Rules
 
 - **`main` branch is protected** -- always create a feature branch and PR
+- **`subscriptionsToPlaceInManagementGroup` must never contain empty strings** -- causes invalid ARM resource names like `identity/` for `Microsoft.Management/managementGroups/subscriptions`. Use `[]` when no subscriptions to place.
 
 ## Key Commands
 
 ```bash
 bicep build <file.bicep>           # Compile Bicep to ARM JSON
 bicep build-params <file.bicepparam> --stdout  # Validate params
+```
+
+## PR Workflow
+
+When asked to "push changes", follow these steps:
+
+```bash
+# 1. Create feature branch from main
+git checkout -b fix/<short-description>
+
+# 2. Stage and commit
+git add <files> && git commit -m "<message>"
+
+# 3. Push branch
+git push -u origin <branch-name>
+
+# 4. Create PR via Azure CLI
+az repos pr create \
+  --repository "alz-mgmt" \
+  --source-branch "<branch-name>" \
+  --target-branch "main" \
+  --title "<title>" \
+  --description "<markdown body>"
 ```
 
 ## CI/CD
