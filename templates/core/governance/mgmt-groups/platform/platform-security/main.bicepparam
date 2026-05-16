@@ -20,7 +20,7 @@ param platformSecurityConfig = {
   customerPolicyDefs: []
   customerPolicySetDefs: []
   customerPolicyAssignments: []
-  subscriptionsToPlaceInManagementGroup: ['']
+  subscriptionsToPlaceInManagementGroup: []
   waitForConsistencyCounterBeforeCustomPolicyDefinitions: 30
   waitForConsistencyCounterBeforeCustomPolicySetDefinitions: 30
   waitForConsistencyCounterBeforeCustomRoleDefinitions: 30
