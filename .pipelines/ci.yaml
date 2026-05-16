@@ -1,0 +1,14 @@
+---
+trigger:
+  - none
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: Azure Landing Zone/alz-mgmt-templates
+
+lockBehavior: sequential
+
+extends:
+  template: .pipelines/ci-template.yaml@templates
