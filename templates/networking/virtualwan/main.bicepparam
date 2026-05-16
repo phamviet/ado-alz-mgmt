@@ -2,8 +2,8 @@ using './main.bicep'
 
 // General Parameters
 param parLocations = [
-  '<region-1>'
-  '<region-2>'
+  'southeastasia'
+  ''
 ]
 param parTags = {}
 param parEnableTelemetry = true
