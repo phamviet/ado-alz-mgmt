@@ -17,6 +17,11 @@ Import-Module Az.Resources
 $templateFilePath = Join-Path $templateDir "main.bicep"
 $templateParametersFilePath = Join-Path $templateDir "main.bicepparam"
 
+if ($name.EndsWith("-rbac")) {
+    $templateFilePath = Join-Path $templateDir "main-rbac.bicep"
+    $templateParametersFilePath = Join-Path $templateDir "main-rbac.bicepparam"
+}
+
 if (-not (Test-Path $templateFilePath)) {
     Write-Error "Template file not found: $templateFilePath"
     exit 1
