@@ -1,6 +1,26 @@
 Azure Landing Zone
 
-## Fixed issues from original `starter` module
+## Removed Resources
+
+* Azure Firewall
+* Bastion
+* ExpressRouteGateway
+* VPNGateway
+* DDOS Protection https://azure.github.io/Azure-Landing-Zones/bicep/howtos/modifyingpolicyassignments/#ddos-protection
+
+## Scripts
+
+### Manual Deploy Script
+
+```bash
+
+./scripts/deploy.sh managementGroup governance-landingzones templates/core/governance/mgmt-groups/landingzones
+./scripts/deploy.sh managementGroup governance-platform-connectivity templates/core/governance/mgmt-groups/platform/platform-connectivity
+./scripts/deploy.sh subscription networking-hubnetworking templates/networking/hubnetworking
+
+./scripts/deploy.sh managementGroup governance-landingzones-rbac templates/core/governance/mgmt-groups/landingzones
+./scripts/deploy.sh managementGroup governance-platform-connectivity-rbac templates/core/governance/mgmt-groups/platform/platform-connectivity
+```
 
 1. Runner lack of permission to read `identity` Management Group
 
@@ -10,6 +30,3 @@ az role assignment create \
   --role "Management Group Contributor" \
   --scope "/"
 ```
-
-2. VNet deployment fails when DDOS protection is disabled due to invalid reference to non-existent DDOS resource in `dependsOn` and `ddosProtectionPlanResourceId`
-
