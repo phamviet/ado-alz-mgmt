@@ -6,7 +6,7 @@ param parLocations = [
   ''
 ]
 param parTags = {}
-param parEnableTelemetry = true
+param parEnableTelemetry = false
 param parGlobalResourceLock = {
   name: 'GlobalResourceLock'
   kind: 'None'

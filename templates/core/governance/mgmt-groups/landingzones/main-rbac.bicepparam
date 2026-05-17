@@ -4,4 +4,4 @@ param parLandingZonesManagementGroupName = 'landingzones'
 param parPlatformManagementGroupName = 'platform'
 param parConnectivityManagementGroupName = 'connectivity'
 param parManagementGroupExcludedPolicyAssignments = []
-param parEnableTelemetry = true
+param parEnableTelemetry = false

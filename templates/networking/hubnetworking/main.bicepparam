@@ -10,7 +10,7 @@ param parGlobalResourceLock = {
   notes: 'This lock was created by the ALZ Bicep Accelerator.'
 }
 param parTags = {}
-param parEnableTelemetry = true
+param parEnableTelemetry = false
 
 // Resource Group Parameters
 param parHubNetworkingResourceGroupNamePrefix = 'rg-alz-conn'

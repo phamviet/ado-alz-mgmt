@@ -5,7 +5,7 @@ param parLocations = [
   'southeastasia'
   ''
 ]
-param parEnableTelemetry = true
+param parEnableTelemetry = false
 
 param platformConnectivityConfig = {
   createOrUpdateManagementGroup: true
