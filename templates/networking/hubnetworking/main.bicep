@@ -170,7 +170,7 @@ module resHubVirtualNetwork 'br/public:avm/res/network/virtual-network:0.7.2' = 
       modHubNetworkingResourceGroups[i]
       ...(hub.ddosProtectionPlanSettings.deployDdosProtectionPlan
         ? [resDdosProtectionPlan[i]]
-        : hubNetworks[0].ddosProtectionPlanSettings.deployDdosProtectionPlan ? [resDdosProtectionPlan[0]] : [])
+        : [])
     ]
     params: {
       name: hub.name
@@ -181,9 +181,7 @@ module resHubVirtualNetwork 'br/public:avm/res/network/virtual-network:0.7.2' = 
         : (hub.?dnsServers ?? [])
       ddosProtectionPlanResourceId: hub.?ddosProtectionPlanResourceId ?? (hub.ddosProtectionPlanSettings.deployDdosProtectionPlan
         ? resDdosProtectionPlan[i].?outputs.resourceId
-        : hubNetworks[0].ddosProtectionPlanSettings.deployDdosProtectionPlan
-            ? resDdosProtectionPlan[0].?outputs.resourceId
-            : null)
+        : null)
       vnetEncryption: hub.?vnetEncryption ?? false
       vnetEncryptionEnforcement: hub.?vnetEncryptionEnforcement ?? 'AllowUnencrypted'
       subnets: [
